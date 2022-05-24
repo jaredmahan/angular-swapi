@@ -1,1 +1,35 @@
-<p>person works!</p>
+<style>
+  .card {
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ddd;
+    display: flex;
+    margin-bottom: 8px;
+  }
+  .column {
+    flex: 1;
+  }
+  .column div {
+    padding: 2px 0;
+  }
+  .column div label {
+    font-weight: bold;
+  }
+</style>
+<div class="card">
+  <div class="column">
+    <div><label>Character:</label> {{ person.name }}</div>
+    <div><label>Birth Year:</label> {{ person.birth_year }}</div>
+    <div><label>Gender:</label> {{ person.gender }}</div>
+  </div>
+  <div class="column">
+    <div><label>Height:</label> {{ person.height }}</div>
+    <div><label>Mass:</label> {{ person.mass }}</div>
+    <div><label>Eye Color:</label> {{ person.eye_color }}</div>
+  </div>
+  <div class="column">
+    <div><label>Hair Color:</label> {{ person.hair_color }}</div>
+    <div><label>Skin Color:</label> {{ person.skin_color }}</div>
+  </div>
+</div>

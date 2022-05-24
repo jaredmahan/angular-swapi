@@ -1,2 +1,3 @@
-<p>starwars-lookup-container works!</p>
-<app-person></app-person>
+<div *ngFor="let person of (people$ | async)?.results; index as i">
+  <app-person [person]="person"></app-person>
+</div>
