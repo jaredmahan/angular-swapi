@@ -13,8 +13,8 @@ export class StarwarsLookupContainer implements OnInit {
   searchControl = new FormControl('');
   people$ = new BehaviorSubject(new Result<Person>()).asObservable();
   dirty = false;
-  constructor(private peopleService: PeopleService) {}
 
+  constructor(private peopleService: PeopleService) {}
 
   ngOnInit(): void {
     this.searchControl.valueChanges.pipe(debounceTime(500)).subscribe((value) => {
