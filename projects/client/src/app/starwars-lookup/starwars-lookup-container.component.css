@@ -12,6 +12,10 @@ app-person {
   width: 100%;
 }
 
+input[type="search"] {
+  line-height: 27px;
+}
+
 .results-caption {
   padding-left: 10px;
   font-style: italic;

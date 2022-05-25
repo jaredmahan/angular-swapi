@@ -1,4 +1,5 @@
 export class Person {
+  id?: number;
   birth_year!: string;
   eye_color!: string;
   films!: Array<string>;

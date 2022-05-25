@@ -15,4 +15,22 @@
       </div>
     </div>
   </mat-card-content>
+  <mat-card-actions align="end">
+    <button
+      *ngIf="!favorite"
+      class="favorite"
+      mat-icon-button
+      (click)="addNewFavorite(person)"
+    >
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button
+      *ngIf="favorite"
+      class="favorite"
+      mat-icon-button
+      (click)="removeFavoriteFromList(person)"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
 </mat-card>

@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { BehaviorSubject, catchError, retry, throwError } from "rxjs";
-import { Result } from "./types";
+import { Result } from "../types";
 
 export class BaseService<T> {
   url: string = "https://swapi.dev/api/";

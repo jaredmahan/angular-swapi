@@ -9,8 +9,32 @@
       [formControl]="searchControl"
     />
   </mat-form-field>
+
+  Favorites: <br />
+  <div
+    class="person-container"
+    *ngIf="favorites$ | async as favorites; else loading"
+  >
+    <app-person
+      [favorite]="true"
+      (deleteFavorite)="deleteFavorite(favorite)"
+      *ngFor="let favorite of favorites$ | async"
+      [person]="favorite"
+    ></app-person>
+    <div *ngIf="favorites.length === 0" class="results-caption">
+      No favorites added.
+    </div>
+    <ng-template #loading>
+      <div class="results-caption">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+  </div>
+  <hr />
   <div class="person-container" *ngIf="people$ | async as people; else loading">
     <app-person
+      [favorite]="false"
+      (addFavorite)="addFavorite(person)"
       *ngFor="let person of people?.results"
       [person]="person"
     ></app-person>
