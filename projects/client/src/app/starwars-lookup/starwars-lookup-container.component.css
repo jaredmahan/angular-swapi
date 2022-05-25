@@ -1,0 +1,9 @@
+.person-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+app-person {
+  flex: 0;
+  min-width: 350px;
+}

@@ -1,0 +1,16 @@
+mat-card {
+  padding: 10px;
+  margin: 8px;
+}
+.row {
+  display: flex;
+}
+.column {
+  flex: 1;
+}
+.column div {
+  padding: 2px 0;
+}
+.column div label {
+  font-weight: bold;
+}
