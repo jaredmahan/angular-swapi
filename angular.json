@@ -26,7 +26,7 @@
               "projects/client/src/favicon.ico",
               "projects/client/src/assets"
             ],
-            "styles": ["projects/client/src/styles.css"],
+            "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "projects/client/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -91,7 +91,7 @@
               "projects/client/src/favicon.ico",
               "projects/client/src/assets"
             ],
-            "styles": ["projects/client/src/styles.css"],
+            "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "projects/client/src/styles.css"],
             "scripts": []
           }
         }
