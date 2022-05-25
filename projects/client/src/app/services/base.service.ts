@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { catchError, retry, throwError } from "rxjs";
+import { BehaviorSubject, catchError, retry, throwError } from "rxjs";
 import { Result } from "./types";
 
 export class BaseService<T> {
@@ -8,6 +8,8 @@ export class BaseService<T> {
   constructor(private httpClient: HttpClient, private endpoint: string) {}
 
   search(query: string) {
+    // Short-circuit the search if the query is empty
+    if (query.length === 0) return new BehaviorSubject<Result<T>>(new Result<T>()).asObservable();
     return this.httpClient
       .get<Result<T>>(`${this.url}/${this.endpoint}?search=${query}`)
       .pipe(retry(2), catchError(this.handleError));

@@ -8,7 +8,13 @@ import { StarwarsLookupModule } from "./starwars-lookup/starwars-lookup.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, StarwarsLookupModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    StarwarsLookupModule,
+    BrowserAnimationsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

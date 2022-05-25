@@ -7,3 +7,15 @@ app-person {
   flex: 0;
   min-width: 350px;
 }
+
+.full-width {
+  width: 100%;
+}
+
+.results-caption {
+  padding-left: 10px;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 20;
+  color: #444;
+}

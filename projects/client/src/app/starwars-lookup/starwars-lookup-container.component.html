@@ -1,6 +1,26 @@
-<div class="person-container">
-  <app-person
-    *ngFor="let person of (people$ | async)?.results; index as i"
-    [person]="person"
-  ></app-person>
+<div>
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-icon matPrefix>search</mat-icon>
+    <input
+      type="search"
+      matInput
+      placeholder="Start typing to find your favorite Star Wars characters..."
+      autofocus
+      [formControl]="searchControl"
+    />
+  </mat-form-field>
+  <div class="person-container" *ngIf="people$ | async as people; else loading">
+    <app-person
+      *ngFor="let person of people?.results"
+      [person]="person"
+    ></app-person>
+    <div *ngIf="people?.results?.length === 0 && dirty" class="results-caption">
+      No results found.
+    </div>
+  </div>
+  <ng-template #loading>
+    <div class="results-caption">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
 </div>

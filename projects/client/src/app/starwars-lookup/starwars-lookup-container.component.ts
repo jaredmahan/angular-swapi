@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
+import { FormControl } from "@angular/forms";
+import { BehaviorSubject, debounceTime, Observable } from "rxjs";
 import { PeopleService } from "../services/people.service";
 import { Result, Person } from "../services/types";
 
@@ -9,10 +10,16 @@ import { Result, Person } from "../services/types";
   styleUrls: ["./starwars-lookup-container.component.css"]
 })
 export class StarwarsLookupContainer implements OnInit {
-  people$!: Observable<Result<Person>>;
+  searchControl = new FormControl('');
+  people$ = new BehaviorSubject(new Result<Person>()).asObservable();
+  dirty = false;
   constructor(private peopleService: PeopleService) {}
 
+
   ngOnInit(): void {
-    this.people$ = this.peopleService.search("la");
+    this.searchControl.valueChanges.pipe(debounceTime(500)).subscribe((value) => {
+      this.dirty = true;
+      this.people$ = this.peopleService.search(value);
+    });
   }
 }

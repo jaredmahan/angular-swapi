@@ -3,11 +3,14 @@ import { CommonModule } from "@angular/common";
 import { StarwarsLookupContainer } from "./starwars-lookup-container.component";
 import { PersonComponent } from "./person/person.component";
 import { MatCardModule } from "@angular/material/card";
-import { MatSliderModule } from "@angular/material/slider";
+import { MatInputModule } from "@angular/material/input";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [StarwarsLookupContainer, PersonComponent],
-  imports: [CommonModule, MatCardModule, MatSliderModule],
+  imports: [CommonModule, ReactiveFormsModule, MatCardModule, MatIconModule, MatInputModule, MatProgressSpinnerModule],
   exports: [StarwarsLookupContainer]
 })
 export class StarwarsLookupModule {}
