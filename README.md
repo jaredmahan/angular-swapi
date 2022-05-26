@@ -1,6 +1,14 @@
-# AngularSwapi
+# Angular Star Wars App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+
+## What it does
+
+This app allows the user to search for various Star Wars characters using the open SWAPI. It also uses Indexdb via Dexie to store favorites.
+
+### TODO
+
+Add testing to the various parts of the application.
 
 ## Development server
 
